@@ -1,0 +1,37 @@
+In the root folder (where package.json is), run "sudo npm install"
+
+Install Nodemon which watches for changes to the code and restarts the app when changes are made
+npm install -g nodemon
+
+Install MongoDB
+https://docs.mongodb.com/master/tutorial/install-mongodb-on-ubuntu/?_ga=1.50097766.1588771673.1480346854
+
+
+
+After installing nodemon, I can run
+nodemon app.js -L 
+and view it on http://192.168.33.10:4569/
+and when I make a change to app.js and save it, nodemon will restart the server
+
+Since I am running in Vagrant, I cannot just run
+nodemon-debug app.js
+I have to run
+node --debug app.js
+in one terminal, open up another and run
+node-inspector
+simultaneously, after which I can view the debugging tool on http://192.168.33.10:8080/?port=5858
+and the app itself on http://192.168.33.10:4569/
+
+Express reads pug
+
+http is called a stateless protocol. Web servers don't normally keep track of visitors or users. The server needs to know who's logged in, and keep track of users as they move
+A session is one visit by one browser to a website. A server can create a session ID when a visitor logs into a site. The server can save info in addition to the session.
+Cookies are key/value pairs managed by a browser. Sessions use cookies to keep track of users.
+
+ADD SESSIONS AND COOKIES
+Express session module. It gives us middleware. It saves us form having to do a lot of programming.
+
+npm install express-session --save
+
+Install connect-mongo to save session data in the mongodb database instead of the server's ram
+npm install connect-mongo --save

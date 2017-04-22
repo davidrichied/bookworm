@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	.main.container.row
+		.col-md-6.col-md-offset-3
+			h1.display-4.m-4-b-2 Suggest Book
+
+			// register form
+			form(method='POST' action='/suggest-book')
+				div.form-group
+					label(for='title') Title:
+					input#title.form-control(type='text', placeholder='title of book' name='title')
+				button.btn.btn-primary(type='submit') Suggest Book

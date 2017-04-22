@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	.main.container.row
+		.col-md-6.col-md-offset-3
+			h1.display-4.m-4-b-2 Add Book
+			#container
+				// add book form
+				form(method='POST' action='/add-book')
+					for book in books
+						div.radio.inline
+							label(for='name')
+								input#name(type='radio', name='book' value=book._id)
+								| #{book.title}
+					button.btn.btn-primary(type='submit') Add Book

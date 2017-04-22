@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	.main.container.clearfix
+		.row
+			.col-md-8
+				h1.display-4
+					img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+					| #{name}
+				h2.favorite-book Favorite Book
+				if favorite
+					p.favorite #{favorite}
+				else
+					No book chosen, yet
+				h2.all-users All Users
+				if users
+					for user in users
+						p.user #{user.name} (#{user.email})
+				else
+					p.user No users chosen, yet.
+			.col-md-4
+				h2 Add stuff
+				
